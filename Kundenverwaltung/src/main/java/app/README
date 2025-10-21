@@ -1,0 +1,23 @@
+# Kundenverwaltung
+
+Ein einfaches Kundenverwaltungssystem in Java mit MariaDB/MySQL.
+Unterstützt Login, Rollen und CRUD-Operationen (Create, Read, Update, Delete).
+
+## Features
+- Konsolen- oder GUI-basiertes Interface
+- Benutzer- und Admin-Rollen
+- Kunden anzeigen, hinzufügen, aktualisieren, löschen (admin)
+- DB-gestützte Speicherung
+
+## Projektstruktur
+- `Main.java` – Konsoleninterface
+- `KundenGUI.java` – GUI mit Swing
+- `KundenService.java` – CRUD-Methoden
+- `Kunde.java` – Kundenmodell
+- `AuthenticationService.java` – Login/Rollenprüfung
+- `DBConnection.java` – DB-Verbindung
+
+## Benutzung
+1. DB konfigurieren (MySQL/MariaDB)
+2. Login starten
+3. Menü benutzen (CRUD)

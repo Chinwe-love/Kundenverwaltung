@@ -1,0 +1,105 @@
+Projektidee
+
+Dieses Projekt ist ein einfaches Kundenverwaltungssystem.
+
+Benutzer können sich anmelden (Login).
+
+Abhängig von der Rolle (user oder admin) haben sie unterschiedliche Rechte:
+
+user: Kunden anzeigen, hinzufügen, aktualisieren
+
+admin: zusätzlich Kunden löschen
+
+2️⃣ Projektstruktur
+Kundenverwaltung/
+├─ src/main/java/app/
+│  ├─ Main.java               # Konsolenanwendung zum Testen / Login
+│  ├─ KundenGUI.java          # Optional: grafische Oberfläche (Swing)
+│  ├─ KundenService.java      # CRUD-Methoden für die DB
+│  ├─ Kunde.java              # Modellklasse für Kunden
+│  ├─ AuthenticationService.java  # Login/Role-Prüfung
+│  └─ DBConnection.java       # Verbindung zur MariaDB / MySQL
+
+3️⃣ Datenbank
+
+Tabelle kunden mit Spalten:
+id, vorname, nachname, firma, anschrift, email
+
+Verbindung über DBConnection.getConnection()
+
+4️⃣ Wichtige Klassen
+Kunde.java
+
+Modellklasse für Kunden
+
+Enthält Felder: id, vorname, nachname, firma, anschrift, email
+
+Mit Getter, Setter und toString()
+
+KundenService.java
+
+Enthält CRUD-Methoden:
+
+listKundenArray() → Kunden als Array-Liste
+
+listKundenLines() → Kunden als CSV-Zeilen
+
+addKunde(), updateKunde(), deleteKunde()
+
+getKundeById() → Ein Kunde anhand der ID
+
+Greift direkt auf die Datenbank zu
+
+AuthenticationService.java
+
+Prüft Benutzername und Passwort
+
+Gibt Rolle zurück (user oder admin)
+
+Main.java
+
+Konsolenbasiertes Interface:
+
+Login
+
+Menü für CRUD-Operationen
+
+Rollenabhängige Optionen (Löschen nur für Admin)
+
+Zeigt, wie man KundenService verwendet
+
+KundenGUI.java
+
+Optional: grafische Oberfläche mit Swing
+
+Tabelle für Kundenanzeige
+
+Buttons für CRUD-Operationen
+
+Popup-Fenster (JOptionPane) für Eingaben
+
+Lösch-Button nur sichtbar für Admin
+
+5️⃣ Benutzung
+
+Starte das Projekt (Main.java oder GUI)
+
+Login mit Benutzername + Passwort
+
+Menü auswählen:
+
+Kunden anzeigen
+
+Kunde hinzufügen
+
+Kunde aktualisieren
+
+Kunde löschen (nur admin)
+
+6️⃣ Besonderheiten
+
+Validierung: Vorname, Nachname und Email dürfen nicht leer sein
+
+Rollenbasiert: Admin darf löschen, normaler User nicht
+
+Trennung von GUI und Service: Geschäftslogik liegt in KundenService, Oberfläche in GUI oder Main
